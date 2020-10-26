@@ -17,8 +17,8 @@ namespace MarcelMathiasNolte\ContaoTextAndImageAsModuleBundle;
 /**
  * Table tl_module
  */
-$GLOBALS['TL_DCA']['tl_module']['palettes']['ncText'] = '{title_legend},name,headline,type;{text_legend},text;{image_legend},addImage;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
-$GLOBALS['TL_DCA']['tl_module']['palettes']['ncImage'] = '{title_legend},name,headline,type;{source_legend},singleSRC;{image_legend},alt,title,size,imagemargin,imageUrl,fullsize,caption;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
+$GLOBALS['TL_DCA']['tl_module']['palettes']['mmnText'] = '{title_legend},name,headline,type;{text_legend},text;{image_legend},addImage;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
+$GLOBALS['TL_DCA']['tl_module']['palettes']['mmnImage'] = '{title_legend},name,headline,type;{source_legend},singleSRC;{image_legend},alt,title,size,imagemargin,imageUrl,fullsize,caption;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
 $GLOBALS['TL_DCA']['tl_module']['subpalettes']['addImage'] = 'singleSRC,alt,title,size,imagemargin,imageUrl,fullsize,caption,floating';
 $GLOBALS['TL_DCA']['tl_module']['fields']['text'] = array
 (
@@ -76,7 +76,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['imageUrl'] = array
 	'eval'                    => array('rgxp'=>'url', 'decodeEntities'=>true, 'maxlength'=>255, 'fieldType'=>'radio', 'filesOnly'=>true, 'tl_class'=>'w50 wizard'),
 	'wizard' => array
 	(
-		array('tl_module_nc_text_image', 'pagePicker')
+		array('MarcelMathiasNolte\ContaoTextAndImageAsModuleBundle\ContaoTextAndImageAsModuleDcaHelper', 'pagePicker')
 	),
 	'sql'                     => "varchar(255) NOT NULL default ''"
 );
