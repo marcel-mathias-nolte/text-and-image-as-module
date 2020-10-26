@@ -1,7 +1,7 @@
 {
-    "name": "marcel-mathias-nolte/contao4-base",
+    "name": "marcel-mathias-nolte/text-and-image-as-module",
     "type": "contao-bundle",
-    "description": "Skeleton for all my Contao 4 bundles",
+    "description": "Provide the content elements text and image as modules",
     "homepage": "https://marcel.live",
     "license": "LGPL-3.0-or-later",
     "authors": [
@@ -37,7 +37,7 @@
         "symfony/phpunit-bridge": "^3.2"
     },
     "extra": {
-        "contao-manager-plugin": "MarcelMathiasNolte\\SkeletonBundle\\ContaoManager\\Plugin"
+        "contao-manager-plugin": "MarcelMathiasNolte\\ContaoTextAndImageAsModuleBundle\\ContaoManager\\Plugin"
     },
     "autoload": {
         "psr-4": {
@@ -50,7 +50,7 @@
         }
     },
     "support": {
-        "issues": "https://github.com/marcel-mathias-nolte/contao4-base/issues",
-        "source": "https://github.com/marcel-mathias-nolte/contao4-base"
+        "issues": "https://github.com/marcel-mathias-nolte/text-and-image-as-module/issues",
+        "source": "https://github.com/marcel-mathias-nolte/text-and-image-as-module"
     }
 }
