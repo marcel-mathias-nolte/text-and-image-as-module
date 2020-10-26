@@ -5,14 +5,14 @@
  *
  * Copyright (C) 2005-2012 Leo Feyer
  *
- * @package   ContaoTestAndImageAsModuleBundle
+ * @package   ContaoTextAndImageAsModuleBundle
  * @author    Marcel Mathias Nolte
  * @copyright Marcel Mathias Nolte 2015-2020
  * @website	  https://marcel.live
  * @license   LGPL-3.0-or-later
  */
 
-namespace MarcelMathiasNolte\ContaoTestAndImageAsModuleBundle\Module;
+namespace MarcelMathiasNolte\ContaoTextAndImageAsModuleBundle\Module;
 
 
 /**
@@ -22,7 +22,7 @@ namespace MarcelMathiasNolte\ContaoTestAndImageAsModuleBundle\Module;
  * @author    Marcel Mathias Nolte
  * @copyright Marcel Mathias Nolte 2015-2020
  */
-class ContaoImageBundle extends \Module
+class ModuleImage extends \Module
 {
 
 	/**

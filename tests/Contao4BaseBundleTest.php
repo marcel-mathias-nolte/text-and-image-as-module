@@ -18,6 +18,6 @@ class Contao4BaseBundleTest extends TestCase
     {
         $bundle = new SkeletonBundle();
 
-        $this->assertInstanceOf('MarcelMathiasNolte\SkeletonBundle\ContaoSkeletonBundle', $bundle);
+        $this->assertInstanceOf('MarcelMathiasNolte\SkeletonBundle\ContaoTextAndImageAsModuleBundle', $bundle);
     }
 }

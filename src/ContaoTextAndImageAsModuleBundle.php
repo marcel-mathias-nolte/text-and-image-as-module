@@ -8,10 +8,10 @@
  * @license LGPL-3.0-or-later
  */
 
-namespace MarcelMathiasNolte\SkeletonBundle;
+namespace MarcelMathiasNolte\ContaoTextAndImageAsModuleBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class ContaoSkeletonBundle extends Bundle
+class ContaoTextAndImageAsModuleBundle extends Bundle
 {
 }
