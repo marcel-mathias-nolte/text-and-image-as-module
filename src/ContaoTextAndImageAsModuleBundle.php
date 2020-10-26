@@ -1,11 +1,13 @@
 <?php
 
 /*
- * This file is part of SkeletonBundle.
+ * This file is part of ContaoTextAndImageAsModuleBundle.
  *
- * (c) John Doe
- *
- * @license LGPL-3.0-or-later
+ * @package   ContaoTextAndImageAsModuleBundle
+ * @author    Marcel Mathias Nolte
+ * @copyright Marcel Mathias Nolte 2015-2020
+ * @website	  https://marcel.live
+ * @license   LGPL-3.0-or-later
  */
 
 namespace MarcelMathiasNolte\ContaoTextAndImageAsModuleBundle;
