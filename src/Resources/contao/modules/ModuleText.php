@@ -22,7 +22,7 @@ namespace MarcelMathiasNolte\ContaoTextAndImageAsModuleBundle\Module;
  * @author    Marcel Mathias Nolte
  * @copyright Marcel Mathias Nolte 2015-2020
  */
-class ModuleText extends Contao\Module
+class ModuleText extends \Contao\Module
 {
 
 	/**
@@ -53,31 +53,31 @@ class ModuleText extends Contao\Module
 		// Clean the RTE output
 		if ($objPage->outputFormat == 'xhtml')
 		{
-			$this->text = Contao\StringUtil::toXhtml($this->text);
+			$this->text = \Contao\StringUtil::toXhtml($this->text);
 		}
 		else
 		{
-			$this->text = Contao\StringUtil::toHtml5($this->text);
+			$this->text = \Contao\StringUtil::toHtml5($this->text);
 		}
 
 		// Add the static files URL to images
 		if (TL_FILES_URL != '')
 		{
-			$path = Contao\Config::get('uploadPath') . '/';
+			$path = \Contao\Config::get('uploadPath') . '/';
 			$this->text = str_replace(' src="' . $path, ' src="' . TL_FILES_URL . $path, $this->text);
 		}
 
-		$this->Template->text = Contao\StringUtil::encodeEmail($this->text);
+		$this->Template->text = \Contao\StringUtil::encodeEmail($this->text);
 		$this->Template->addImage = false;
 
 		// Add an image
 		if ($this->addImage && $this->singleSRC != '')
 		{
-			$objModel = Contao\FilesModel::findByUuid($this->singleSRC);
+			$objModel = \Contao\FilesModel::findByUuid($this->singleSRC);
 
 			if ($objModel === null)
 			{
-				if (!Contao\Validator::isUuid($this->singleSRC))
+				if (!\Contao\Validator::isUuid($this->singleSRC))
 				{
 					$this->Template->text = '<p class="error">'.$GLOBALS['TL_LANG']['ERR']['version2format'].'</p>';
 				}

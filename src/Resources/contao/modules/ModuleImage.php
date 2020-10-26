@@ -22,7 +22,7 @@ namespace MarcelMathiasNolte\ContaoTextAndImageAsModuleBundle\Module;
  * @author    Marcel Mathias Nolte
  * @copyright Marcel Mathias Nolte 2015-2020
  */
-class ModuleImage extends Contao\Module
+class ModuleImage extends \Contao\Module
 {
 
 	/**
@@ -44,11 +44,11 @@ class ModuleImage extends Contao\Module
 			return '';
 		}
 
-		$objFile = Contao\FilesModel::findByUuid($this->singleSRC);
+		$objFile = \Contao\FilesModel::findByUuid($this->singleSRC);
 
 		if ($objFile === null)
 		{
-			if (!Contao\Validator::isUuid($this->singleSRC))
+			if (!\Contao\Validator::isUuid($this->singleSRC))
 			{
 				return '<p class="error">'.$GLOBALS['TL_LANG']['ERR']['version2format'].'</p>';
 			}
