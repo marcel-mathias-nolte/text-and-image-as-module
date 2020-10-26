@@ -38,8 +38,8 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['addImage'] = array
 	'eval'                    => array('submitOnChange'=>true),
 	'sql'                     => "char(1) NOT NULL default ''"
 );
-$GLOBALS['TL_DCA']['tl_module']['fields']['singleSRC']['load_callback'][] = array('ContaoTextAndImageAsModuleDcaHelper', 'setSingleSrcFlags');
-$GLOBALS['TL_DCA']['tl_module']['fields']['singleSRC']['save_callback'][] = array('ContaoTextAndImageAsModuleDcaHelper', 'storeFileMetaInformation');
+$GLOBALS['TL_DCA']['tl_module']['fields']['singleSRC']['load_callback'][] = array('MarcelMathiasNolte\ContaoTextAndImageAsModuleBundle\ContaoTextAndImageAsModuleDcaHelper', 'setSingleSrcFlags');
+$GLOBALS['TL_DCA']['tl_module']['fields']['singleSRC']['save_callback'][] = array('MarcelMathiasNolte\ContaoTextAndImageAsModuleBundle\ContaoTextAndImageAsModuleDcaHelper', 'storeFileMetaInformation');
 $GLOBALS['TL_DCA']['tl_module']['fields']['alt'] = array
 (
 	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['alt'],
@@ -111,7 +111,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['floating'] = array
  * @website	  https://marcel.live
  * @license   LGPL-3.0-or-later
  */
-class ContaoTextAndImageAsModuleDcaHelper extends Backend
+class ContaoTextAndImageAsModuleDcaHelper extends \Backend
 {
 
 	/**
