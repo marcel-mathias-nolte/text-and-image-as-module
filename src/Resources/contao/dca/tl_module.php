@@ -111,7 +111,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['floating'] = array
  * @website	  https://marcel.live
  * @license   LGPL-3.0-or-later
  */
-class ContaoTextAndImageAsModuleDcaHelper extends \Backend
+class ContaoTextAndImageAsModuleDcaHelper extends Contao\Backend
 {
 
 	/**
@@ -127,11 +127,11 @@ class ContaoTextAndImageAsModuleDcaHelper extends \Backend
 	 * Dynamically add flags to the "singleSRC" field
 	 *
 	 * @param mixed         $varValue
-	 * @param \DataContainer $dc
+	 * @param Contao\DataContainer $dc
 	 *
 	 * @return mixed
 	 */
-	public function setSingleSrcFlags($varValue, \DataContainer $dc)
+	public function setSingleSrcFlags($varValue, Contao\DataContainer $dc)
 	{
 		if ($dc->activeRecord)
 		{
@@ -139,7 +139,7 @@ class ContaoTextAndImageAsModuleDcaHelper extends \Backend
 			{
 				case 'text':
 				case 'image':
-					$GLOBALS['TL_DCA'][$dc->table]['fields'][$dc->field]['eval']['extensions'] = \Config::get('validImageTypes');
+					$GLOBALS['TL_DCA'][$dc->table]['fields'][$dc->field]['eval']['extensions'] = Contao\Config::get('validImageTypes');
 					break;
 			}
 		}
@@ -152,18 +152,18 @@ class ContaoTextAndImageAsModuleDcaHelper extends \Backend
 	 * Pre-fill the "alt" and "caption" fields with the file meta data
 	 *
 	 * @param mixed         $varValue
-	 * @param \DataContainer $dc
+	 * @param Contao\DataContainer $dc
 	 *
 	 * @return mixed
 	 */
-	public function storeFileMetaInformation($varValue, \DataContainer $dc)
+	public function storeFileMetaInformation($varValue, Contao\DataContainer $dc)
 	{
 		if ($dc->activeRecord->singleSRC == $varValue)
 		{
 			return $varValue;
 		}
 
-		$objFile = \FilesModel::findByUuid($varValue);
+		$objFile = Contao\FilesModel::findByUuid($varValue);
 
 		if ($objFile !== null)
 		{
@@ -176,7 +176,7 @@ class ContaoTextAndImageAsModuleDcaHelper extends \Backend
 
 				if ($objPage->numRows)
 				{
-					$objModel = new \PageModel();
+					$objModel = new Contao\PageModel();
 					$objModel->setRow($objPage->row());
 					$objModel->loadDetails();
 
@@ -184,8 +184,8 @@ class ContaoTextAndImageAsModuleDcaHelper extends \Backend
 					$strLanguage = str_replace('-', '_', $objModel->rootLanguage);
 					if (isset($arrMeta[$strLanguage]))
 					{
-						\Input::setPost('alt', $arrMeta[$strLanguage]['title']);
-						\Input::setPost('caption', $arrMeta[$strLanguage]['caption']);
+						Contao\Input::setPost('alt', $arrMeta[$strLanguage]['title']);
+						Contao\Input::setPost('caption', $arrMeta[$strLanguage]['caption']);
 					}
 				}
 			}
@@ -198,13 +198,13 @@ class ContaoTextAndImageAsModuleDcaHelper extends \Backend
 	/**
 	 * Return the link picker wizard
 	 *
-	 * @param \DataContainer $dc
+	 * @param Contao\DataContainer $dc
 	 *
 	 * @return string
 	 */
-	public function pagePicker(\DataContainer $dc)
+	public function pagePicker(Contao\DataContainer $dc)
 	{
-		return ' <a href="' . ((strpos($dc->value, '{{link_url::') !== false) ? 'contao/page.php' : 'contao/file.php') . '?do=' . \Input::get('do') . '&amp;table=' . $dc->table . '&amp;field=' . $dc->field . '&amp;value=' . str_replace(array('{{link_url::', '}}'), '', $dc->value) . '&amp;switch=1' . '" title="' . specialchars($GLOBALS['TL_LANG']['MSC']['pagepicker']) . '" onclick="Backend.getScrollOffset();Backend.openModalSelector({\'width\':768,\'title\':\'' . specialchars(str_replace("'", "\\'", $GLOBALS['TL_LANG']['MOD']['page'][0])) . '\',\'url\':this.href,\'id\':\'' . $dc->field . '\',\'tag\':\'ctrl_'. $dc->field . ((\Input::get('act') == 'editAll') ? '_' . $dc->id : '') . '\',\'self\':this});return false">' . \Image::getHtml('pickpage.gif', $GLOBALS['TL_LANG']['MSC']['pagepicker'], 'style="vertical-align:top;cursor:pointer"') . '</a>';
+		return ' <a href="' . ((strpos($dc->value, '{{link_url::') !== false) ? 'contao/page.php' : 'contao/file.php') . '?do=' . Contao\Input::get('do') . '&amp;table=' . $dc->table . '&amp;field=' . $dc->field . '&amp;value=' . str_replace(array('{{link_url::', '}}'), '', $dc->value) . '&amp;switch=1' . '" title="' . specialchars($GLOBALS['TL_LANG']['MSC']['pagepicker']) . '" onclick="Backend.getScrollOffset();Backend.openModalSelector({\'width\':768,\'title\':\'' . specialchars(str_replace("'", "\\'", $GLOBALS['TL_LANG']['MOD']['page'][0])) . '\',\'url\':this.href,\'id\':\'' . $dc->field . '\',\'tag\':\'ctrl_'. $dc->field . ((Contao\Input::get('act') == 'editAll') ? '_' . $dc->id : '') . '\',\'self\':this});return false">' . Contao\Image::getHtml('pickpage.gif', $GLOBALS['TL_LANG']['MSC']['pagepicker'], 'style="vertical-align:top;cursor:pointer"') . '</a>';
 	}
 
 }
