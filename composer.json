@@ -36,12 +36,12 @@
     },
     "autoload": {
         "psr-4": {
-            "MarcelMathiasNolte\\SkeletonBundle\\": "src/"
+            "MarcelMathiasNolte\\ContaoTextAndImageAsModuleBundle\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "MarcelMathiasNolte\\SkeletonBundle\\Tests\\": "tests/"
+            "MarcelMathiasNolte\\ContaoTextAndImageAsModuleBundle\\Tests\\": "tests/"
         }
     },
     "support": {
