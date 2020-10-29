@@ -1,9 +1,13 @@
 # Contao Text And Image As Module Bundle
 
-Contao is an Open Source PHP Content Management System for people who want a
-professional website that is easy to maintain. Visit the [project website][1]
-for more information.
+## Deutsche Version
 
-This package provides the well known content elements text and image as modules.
+Dieses Bundle bietet die bekannten Inhaltselemente *Bild* und *Text* als Module.
 
-They will be found under 'Content'
+Diese sind unter der Modulgruppe *Inhaltselemente* zu finden.
+
+## English version
+
+This package provides the well known content elements *text* and *image* as modules.
+
+They will be found under 'Content elements'

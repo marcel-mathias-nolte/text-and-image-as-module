@@ -10,8 +10,6 @@
  * @license   LGPL-3.0-or-later
  */
 
-/**
- * Front end modules
- */
-$GLOBALS['FE_MOD']['content']['mmnText']  = 'MarcelMathiasNolte\ContaoTextAndImageAsModuleBundle\Module\ModuleText';
-$GLOBALS['FE_MOD']['content']['mmnImage'] = 'MarcelMathiasNolte\ContaoTextAndImageAsModuleBundle\Module\ModuleImage';
+$GLOBALS['TL_LANG']['FMD']['content']  = 'Inhaltselemente';
+$GLOBALS['TL_LANG']['FMD']['mmnText']  = ['Text', 'Erzeugt ein Rich-Text-Element.'];
+$GLOBALS['TL_LANG']['FMD']['mmnImage'] = ['Bild', 'Erzeugt ein einzelnes Bild.'];
