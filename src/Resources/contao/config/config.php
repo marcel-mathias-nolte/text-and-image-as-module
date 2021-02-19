@@ -13,5 +13,5 @@
 /**
  * Front end modules
  */
-$GLOBALS['FE_MOD']['content']['mmnText']  = 'MarcelMathiasNolte\ContaoTextAndImageAsModuleBundle\Module\ModuleText';
-$GLOBALS['FE_MOD']['content']['mmnImage'] = 'MarcelMathiasNolte\ContaoTextAndImageAsModuleBundle\Module\ModuleImage';
+$GLOBALS['FE_MOD']['content']['mmnText']  = 'MarcelMathiasNolte\ContaoTextAndImageAsModuleBundle\Modules\ModuleText';
+$GLOBALS['FE_MOD']['content']['mmnImage'] = 'MarcelMathiasNolte\ContaoTextAndImageAsModuleBundle\Modules\ModuleImage';

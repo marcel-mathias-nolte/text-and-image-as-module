@@ -10,7 +10,7 @@
  * @license   LGPL-3.0-or-later
  */
 
-namespace MarcelMathiasNolte\ContaoTextAndImageAsModuleBundle\Module;
+namespace MarcelMathiasNolte\ContaoTextAndImageAsModuleBundle\Modules;
 
 
 /**
