@@ -15,6 +15,7 @@ namespace MarcelMathiasNolte\ContaoTextAndImageAsModuleBundle;
 /**
  * Table tl_module
  */
+$GLOBALS['TL_DCA']['tl_module']['palettes']['__selector__'][] = 'addImage';
 $GLOBALS['TL_DCA']['tl_module']['palettes']['mmnText'] = '{title_legend},name,headline,type;{text_legend},text;{image_legend},addImage;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
 $GLOBALS['TL_DCA']['tl_module']['palettes']['mmnImage'] = '{title_legend},name,headline,type;{source_legend},singleSRC;{image_legend},alt,title,size,imagemargin,imageUrl,fullsize,caption;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
 $GLOBALS['TL_DCA']['tl_module']['subpalettes']['addImage'] = 'singleSRC,alt,title,size,imagemargin,imageUrl,fullsize,caption,floating';
